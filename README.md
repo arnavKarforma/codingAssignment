@@ -26,10 +26,10 @@ Coding Assignment
  ```
  
 ## Design Decision
-- Attempt has been made to read the Json file in streams not as a whole to efficently maange large files.
-- Attempt has been made to run the application in MultiThread.(As a new JSON object is created a new thread spawns 
+- Attempt has been made to read the Json file in streams not as a whole to efficently mange large files.
+- Attempt has been made to run the application in MultiThread.(As a new JSON object is read a new thread spawns 
   which looks for other InMemory Events in the application already recorded with different STATE and once start and 
-  finished duration is retrived for a single event, the latter thread of same Event persistes it in the DB and clears   
+  finished duration is retrived for a single event, the latter thread of same Event persists it in the DB and clears   
   the InMemory data for the Event)
 - TreadPool/ExecutoService is not used but each time thread is spawned because the target and the size of data this application 
   will deal with is not known, if it is known and tested with thread pool it will outperform the current implementation in time 
@@ -134,7 +134,7 @@ public void loadListOfEvents(List<EventsDb> events)  {
 ```
 
 
-## Assumption that were made while developing the APplication
+## Assumption that were made while developing the Application
 - Always there will be two states STARTED and FINISHED for any Event in the JSON LOG
 - JSON Log will be provided for a single execution of each events, i.e eventId 
   must be unique with just two different states
@@ -142,6 +142,6 @@ public void loadListOfEvents(List<EventsDb> events)  {
 ## Future Work
 - ExecutorService can be used for creating ThreadPool and not spawning each thread only 
   at the time of need
-- If there is need to store data of Events occuring multiple time code has to be modified 
-  and either each Events can be saved in a blob or a surrogate key can be generated based on Business Logic to keep in track same event run multiple time 
+- If there is need to store data of Events occuring multiple time code has to be modified and either 
+  each Events can be saved in a blob or a surrogate key can be generated based on Business Logic to uniquely identify in th DB   and keep in track of same event run multiple time. 
   
