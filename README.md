@@ -65,8 +65,7 @@ public static List<EventLog> readFromJson(String jsonFile) {
 	}
 ```
 
-## If there was no any any need of Multi threaded solution and need of processing huge data, 
-the whole JSON Objects could have been processed all at once like this 
+## If there was no any any need of Multi threaded solution and need of processing huge data,the whole JSON Objects could have been processed all at once like this 
 ```
 public List<EventsDb> transformToEvensDb(List<EventLog> events) {
 		List<EventsDb> eventsDb = new ArrayList<>();
@@ -87,7 +86,7 @@ public List<EventsDb> transformToEvensDb(List<EventLog> events) {
 	  
 	  }); return eventsDb;
 ```
-## And could have been saved in a batch process
+## And could have been saved in DB as batch process Like given below
 ```
 public void loadListOfEvents(List<EventsDb> events)  {
 		Connection con = null;
