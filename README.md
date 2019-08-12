@@ -35,7 +35,7 @@ Coding Assignment
   will deal with is not known, if it is known and tested with thread pool it will outperform the current implementation in time 
   efficency.
 
-## If there was no any need of reading JSON objects in stream it can have been done in this way for better readability
+## If there was no any need of reading JSON objects in stream it can have been done in this way for better readability using JSON.simple
 ```
 public static List<EventLog> readFromJson(String jsonFile) {
 		List<EventLog> events = new ArrayList<>();
