@@ -11,7 +11,7 @@ Coding Assignment
 - File Hsqldb (http://hsqldb.org/)
 - Jackson (https://github.com/codehaus/jackson)
 - Junit (https://junit.org/junit4/)
-- Graddle (https://gradle.org/)
+- Gradle (https://gradle.org/)
 
 
 ## Installation and Run
